@@ -38,6 +38,11 @@ Edit the crontab if you want to change frequency.
     ( crontab -l | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
     #if needed later the below command would remove from crontab
     ( crontab -l | grep -v -F "$croncmd" ) | crontab -
+  else
+    echo "
+This script is already installed.. Exiting.
+"
+    exit 1
   fi
   elif [[ $1 = "-r" ]]; then
     ping -c4 10.1.1.1 > /dev/null
