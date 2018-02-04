@@ -37,7 +37,7 @@ Edit the crontab if you want to change frequency.
     #add to crontab will not make duplicate entries
     ( crontab -l | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
     #if needed later the below command would remove from crontab
-    ( crontab -l | grep -v -F "$croncmd" ) | crontab -
+    #( crontab -l | grep -v -F "$croncmd" ) | crontab -
   else
     echo "
 This script is already installed.. Exiting.
