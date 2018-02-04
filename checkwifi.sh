@@ -4,6 +4,11 @@
 #add to crontab with command: 
 #*/5 * * * * /usr/local/bin/checkwifi.sh >> /home/pi/wifi.log 2>&1
 
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+#printf "I ${RED}love${NC} Stack Overflow\n"
+
+command -v ts >/dev/null 2>&1 || { echo -e >&2 "I ${RED}require ts ${NC}but it's not installed. \nInstall with ${RED}sudo apt-get -y install moreutils${NC} \nAborting."; exit 1; }
 usage="
   Usage:
     checkwifi.sh -r will run the script
