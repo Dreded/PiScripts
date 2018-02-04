@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#copy to  /usr/local/bin
+#add to crontab with command: 
+#*/5 * * * * /usr/local/bin/checkwifi.sh >> /home/pi/wifi.log 2>&1
+
 ping -c4 10.1.1.1 > /dev/null
  
 if [ $? != 0 ] 
