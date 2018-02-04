@@ -28,7 +28,11 @@ if  [[ $1 = "-i" ]]; then
   DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
   BINDIR="/usr/local/bin"
   if [[ $DIR != $BINDIR && -w $BINDIR ]]; then
-    echo "This script is being run outside of $BINDIR so will be installed"
+    echo "
+This script is being run outside of $BINDIR with the intall command so will be installed
+It will also be added to cron and run every 5min.
+Edit the crontab if you want to change frequency.
+"
     cp "${BASH_SOURCE[0]}" $BINDIR
     #add to crontab will not make duplicate entries
     ( crontab -l | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
